@@ -23,6 +23,14 @@ struct TGAHeader {
 struct TGAColor {
     std::uint8_t bgra[4] = {0,0,0,0};
     std::uint8_t bytespp = 4;
+    TGAColor(int r = 0,int g = 0,int b = 0,int a = 0,int spp = 4)
+    {
+        bgra[0] = r;
+        bgra[1] = g;
+        bgra[2] = b;
+        bgra[3] = a;
+        bytespp = spp;
+    }
     std::uint8_t& operator[](const int i) { return bgra[i]; }
 };
 
